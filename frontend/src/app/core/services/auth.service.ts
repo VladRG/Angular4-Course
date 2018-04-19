@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Credentials } from '@app/model';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
 
   private TOKEN_KEY = 'token';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   login(credentials: Credentials): Observable<Credentials> {
     return this.httpClient.post<Credentials>('http://localhost:3000/login', credentials, {
@@ -19,6 +20,7 @@ export class AuthService {
   }
 
   logout(): void {
+    this.router.navigateByUrl('/login');
     localStorage.removeItem(this.TOKEN_KEY);
   }
 

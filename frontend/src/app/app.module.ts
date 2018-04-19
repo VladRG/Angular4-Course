@@ -14,12 +14,12 @@ import { HelloService } from './hello-world/hello.service';
 
 import { AboutComponent, ContactComponent } from '@app/static';
 import { AppLayoutModule } from '@app/layout';
-import { AuthService } from './auth.service';
 import { AppLoginComponent } from '@app/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from '@app/users/users.component';
 import { UserService } from '@app/users/user.service';
-import { AuthGuard } from '@app/auth.guard';
+import { AuthGuard } from '@app/core';
+import { AppCoreModule } from '@app/core/core.module';
 
 const routes: Routes = [
   {
@@ -60,6 +60,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     AppLayoutModule,
+    AppCoreModule,
     RouterModule.forRoot(routes),
 
     // @angular/material
@@ -74,9 +75,7 @@ const routes: Routes = [
   exports: [],
   providers: [
     HelloService,
-    AuthService,
-    UserService,
-    AuthGuard
+    UserService
   ],
   entryComponents: [],
   bootstrap: [AppComponent]

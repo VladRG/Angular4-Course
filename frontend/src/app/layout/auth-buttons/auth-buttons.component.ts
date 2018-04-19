@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '@app/auth.service';
+import { AuthService } from '@app/core';
 
 @Component({
   selector: 'app-auth-buttons',
