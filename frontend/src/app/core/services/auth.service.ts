@@ -32,6 +32,10 @@ export class AuthService {
     localStorage.removeItem(this.TOKEN_KEY);
   }
 
+  getToken(): string {
+    return localStorage.getItem(this.TOKEN_KEY);
+  }
+
   setUser(credentials: Credentials) {
     localStorage.setItem(this.TOKEN_KEY, JSON.stringify(credentials));
   }

@@ -16,9 +16,7 @@ export class AppRegisterComponent implements OnInit {
 
   constructor(private service: AuthService, private router: Router) { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 
   registerButtonPressed() {
     this.service.register(this.credentials)
