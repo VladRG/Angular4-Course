@@ -19,7 +19,7 @@
           </mat-form-field>
 
           <mat-form-field>
-            <input required minlength="4" matInput placeholder="Password" name="password" #password='ngModel' [(ngModel)]='credentials.password'>
+            <input type="password" required minlength="4" matInput placeholder="Password" name="password" #password='ngModel' [(ngModel)]='credentials.password'>
 
             <mat-error *ngIf='password.control.errors && password.control.errors.required'>
               Required

@@ -18,11 +18,20 @@ export class AuthService {
     });
   }
 
+  logout(): void {
+    localStorage.removeItem(this.TOKEN_KEY);
+  }
+
   setUser(credentials: Credentials) {
     localStorage.setItem(this.TOKEN_KEY, JSON.stringify(credentials));
   }
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem(this.TOKEN_KEY);
+  }
+
+  getUsername(): string {
+    const user = JSON.parse(localStorage.getItem(this.TOKEN_KEY)) as Credentials;
+    return user.username;
   }
 }
