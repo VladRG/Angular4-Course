@@ -29,11 +29,17 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const obs1 = Observable.of('Observable1').delay(2000);
-    const obs2 = Observable.of('Observable2').delay(3000);
-    const obs3 = Observable.of('Observable3').delay(4000);
 
-    const subscription = obs1.subscribe((data) => console.log(data));
+    // const error = 'undefined';
+    // if (!!error) {
+    //   console.log('test');
+    // }
+
+    // const obs1 = Observable.of('Observable1').delay(2000);
+    // const obs2 = Observable.of('Observable2').delay(3000);
+    // const obs3 = Observable.of('Observable3').delay(4000);
+
+    // const subscription = obs1.subscribe((data) => console.log(data));
 
     // const subject = new Subject();
 

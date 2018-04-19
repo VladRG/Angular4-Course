@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Credentials } from '@app/model';
 import { AuthService } from '@app/auth.service';
 import { FormControl } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { FormControl } from '@angular/forms';
 export class AppLoginComponent implements OnInit {
 
   credentials: Credentials = new Credentials();
+  error = '';
 
   constructor(private authService: AuthService) { }
 
@@ -22,6 +24,11 @@ export class AppLoginComponent implements OnInit {
   }
 
   loginButtonPressed() {
-    console.log(this.credentials);
+    this.authService.login(this.credentials)
+      .subscribe((data: Credentials) => {
+        console.log(data);
+      }, (response: HttpErrorResponse) => {
+        this.error = response.error;
+      });
   }
 }

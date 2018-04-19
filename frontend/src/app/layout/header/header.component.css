@@ -1,10 +1,11 @@
 :host {
-  height: 55px;
-  border-bottom: 1px solid black;
+  height: 56px;
+  background-color: white;
 }
 
-.color-red {
-  background-color: red !important;
+nav {
+  background-color: transparent !important;
+  padding-bottom: 0px;
 }
 
 .app-navbar-container {
@@ -17,4 +18,3 @@
   flex-grow: 1;
   justify-content: center;
 }
-

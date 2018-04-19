@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 html,
 body {
   width: 100%;
@@ -8,13 +8,17 @@ body {
 }
 
 .link-active {
-  border-bottom: 1px solid orange;
+  border-bottom: 2px solid orange;
 }
 
 .nav-link:hover {
-  border-bottom: 1px solid orange;
+  border-bottom: 2px solid orange;
 }
 
 .nav-link {
   padding-left: 8px;
+}
+
+.mat-form-field {
+  width: 100%;
 }

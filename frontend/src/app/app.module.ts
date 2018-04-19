@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule, MatFormFieldModule, MatCardModule, MatInputModule } from '@angular/material';
 
@@ -15,6 +16,7 @@ import { AboutComponent, ContactComponent } from '@app/static';
 import { AppLayoutModule } from '@app/layout';
 import { AuthService } from './auth.service';
 import { AppLoginComponent } from '@app/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -49,11 +51,16 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     AppLayoutModule,
+    RouterModule.forRoot(routes),
+
+    // @angular/material
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    RouterModule.forRoot(routes)
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   exports: [],
   providers: [
