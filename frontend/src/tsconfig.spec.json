@@ -9,6 +9,11 @@
       "node"
     ]
   },
+  "paths": {
+    "@app/*": [
+      "app/*"
+    ]
+  },
   "files": [
     "test.ts"
   ],

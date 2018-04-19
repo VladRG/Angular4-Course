@@ -8,8 +8,8 @@ import { CommonModule } from '@angular/common';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { HelloService } from './hello-world/hello.service';
 
-import { AppLayoutComponent, AppFooterComponent, AppHeaderComponent } from './layout';
-import { AboutComponent, ContactComponent } from './static';
+import { AppLayoutComponent, AppFooterComponent, AppHeaderComponent } from '@app/layout';
+import { AboutComponent, ContactComponent } from '@app/static';
 
 const routes: Routes = [
   {
