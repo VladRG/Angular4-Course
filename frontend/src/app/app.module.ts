@@ -19,6 +19,7 @@ import { AppLoginComponent } from '@app/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from '@app/users/users.component';
 import { UserService } from '@app/users/user.service';
+import { AuthGuard } from '@app/auth.guard';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    component: UsersComponent
+    component: UsersComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'contact',
@@ -73,7 +75,8 @@ const routes: Routes = [
   providers: [
     HelloService,
     AuthService,
-    UserService
+    UserService,
+    AuthGuard
   ],
   entryComponents: [],
   bootstrap: [AppComponent]
