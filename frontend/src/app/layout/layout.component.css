@@ -11,5 +11,6 @@
 
 .app-content {
   flex-grow: 1;
+  height: 100%;
   /* background-color: cadetblue; */
 }

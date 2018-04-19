@@ -6,6 +6,7 @@ import { AppHeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { AppFooterComponent } from './footer/footer.component';
 import { AppLayoutComponent } from './layout.component';
+import { AppAuthButtonsComponent } from './auth-buttons/auth-buttons.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { AppLayoutComponent } from './layout.component';
   declarations: [
     AppFooterComponent,
     AppHeaderComponent,
+    AppAuthButtonsComponent,
     AppLayoutComponent
   ],
   exports: [AppLayoutComponent]
