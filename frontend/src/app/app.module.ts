@@ -8,8 +8,9 @@ import { CommonModule } from '@angular/common';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { HelloService } from './hello-world/hello.service';
 
-import { AppLayoutComponent, AppFooterComponent, AppHeaderComponent } from '@app/layout';
+
 import { AboutComponent, ContactComponent } from '@app/static';
+import { AppLayoutModule } from '@app/layout/layout.module';
 
 const routes: Routes = [
   {
@@ -31,9 +32,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HelloWorldComponent,
-    AppLayoutComponent,
-    AppHeaderComponent,
-    AppFooterComponent,
     AboutComponent,
     ContactComponent
   ],
@@ -41,6 +39,7 @@ const routes: Routes = [
     BrowserModule,
     CommonModule,
     FormsModule,
+    AppLayoutModule,
     RouterModule.forRoot(routes)
   ],
   exports: [],
