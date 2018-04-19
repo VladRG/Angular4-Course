@@ -4,10 +4,12 @@ import { AuthService } from './services';
 import { AuthGuard } from './guards';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor, ApiUrlInterceptor } from './interceptors';
+import { UserService } from './services';
 
 @NgModule({
   providers: [
     AuthService,
+    UserService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,

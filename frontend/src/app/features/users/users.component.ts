@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { UserService } from '@app/users/user.service';
+import { UserService } from '@app/core';
 import { User, UserResponse } from '@app/model';
 import { MatTableDataSource, PageEvent, MatSort, MatTable } from '@angular/material';
 

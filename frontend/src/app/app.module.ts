@@ -11,82 +11,39 @@ import {
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
-import { HelloService } from './hello-world/hello.service';
 
-
-import { AboutComponent, ContactComponent } from '@app/static';
-import { AppLayoutModule } from '@app/layout';
-import { AppLoginComponent } from '@app/login/login.component';
+import { AppLayoutModule, AppLayoutComponent } from '@app/layout';
 import { HttpClientModule } from '@angular/common/http';
-import { UsersComponent } from '@app/users/users.component';
-import { UserService } from '@app/users/user.service';
 import { AuthGuard } from '@app/core';
 import { AppCoreModule } from '@app/core/core.module';
-import { AppRegisterComponent } from '@app/register/register.component';
+import { UserModule, PagesModule, AuthModule } from '@app/features';
+import { AppSharedModule } from '@app/shared';
+import { AppRoutingModule } from '@app/routing.module';
 
-const routes: Routes = [
-  {
-    path: 'about',
-    component: AboutComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    component: AppLoginComponent
-  },
-  {
-    path: 'register',
-    component: AppRegisterComponent
-  },
-  {
-    path: 'user',
-    component: UsersComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'contact',
-    component: ContactComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    component: ContactComponent
-  }];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HelloWorldComponent,
-    AboutComponent,
-    ContactComponent,
-    AppLoginComponent,
-    AppRegisterComponent,
-    UsersComponent
+    AppComponent
   ],
   imports: [
+    // default
     BrowserModule,
-    CommonModule,
-    FormsModule,
+
+    // shared
     AppLayoutModule,
     AppCoreModule,
-    RouterModule.forRoot(routes),
+    AppSharedModule,
+    AppRoutingModule,
 
-    // @angular/material
-    MatFormFieldModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    MatIconModule,
-    MatPaginatorModule
+    // features
+    UserModule,
+    PagesModule,
+    AuthModule,
+
+
   ],
   exports: [],
   providers: [
-    HelloService,
-    UserService
   ],
   entryComponents: [],
   bootstrap: [AppComponent]
