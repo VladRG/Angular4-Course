@@ -17,6 +17,11 @@ app.get('/', function (req, res) {
     res.send('hello');
 });
 
+app.get('/users', function (req, res) {
+    res.statusCode = 200;
+    res.send(users);
+})
+
 app.post('/login', function (req, res) {
     const existingUser = users.filter((user) => user.username === req.body.username)[0];
     if (existingUser.password === req.body.password) {

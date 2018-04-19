@@ -14,6 +14,14 @@ export const appLinks: Array<AppRouterLink> = [
     options: {
       exact: true
     }
+  },
+  {
+    label: 'Users',
+    path: ['user'],
+    activeClass: 'link-active',
+    options: {
+      exact: true
+    }
   }
 ];
 

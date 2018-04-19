@@ -17,6 +17,8 @@ import { AppLayoutModule } from '@app/layout';
 import { AuthService } from './auth.service';
 import { AppLoginComponent } from '@app/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from '@app/users/users.component';
+import { UserService } from '@app/users/user.service';
 
 const routes: Routes = [
   {
@@ -27,6 +29,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: AppLoginComponent
+  },
+  {
+    path: 'user',
+    component: UsersComponent
   },
   {
     path: 'contact',
@@ -44,7 +50,8 @@ const routes: Routes = [
     HelloWorldComponent,
     AboutComponent,
     ContactComponent,
-    AppLoginComponent
+    AppLoginComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,8 @@ const routes: Routes = [
   exports: [],
   providers: [
     HelloService,
-    AuthService
+    AuthService,
+    UserService
   ],
   entryComponents: [],
   bootstrap: [AppComponent]
