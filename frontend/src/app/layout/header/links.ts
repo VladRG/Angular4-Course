@@ -2,7 +2,7 @@ export const appLinks: Array<any> = [
   {
     label: 'Contact',
     path: ['contact'],
-    activeClass: 'color-red',
+    activeClass: 'link-active',
     options: {
       exact: true
     }
@@ -10,9 +10,12 @@ export const appLinks: Array<any> = [
   {
     label: 'About',
     path: ['about'],
-    activeClass: 'color-red',
+    activeClass: 'link-active',
     options: {
       exact: true
     }
   }
 ];
+
+
+export const footerLinks: Array<any> = [];

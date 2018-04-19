@@ -6,3 +6,7 @@
 .color-red {
   background-color: red !important;
 }
+
+.link-active {
+  border-bottom: 1px solid orange;
+}
