@@ -1,4 +1,8 @@
 :host {
-  background: red;
-  height: 80px;
+  height: 55px;
+  border-bottom: 1px solid black;
+}
+
+.color-red {
+  background-color: red !important;
 }

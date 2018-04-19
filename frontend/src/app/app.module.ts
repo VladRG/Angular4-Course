@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
@@ -11,6 +11,25 @@ import { AppLayoutComponent } from './layout/layout.component';
 import { AppHeaderComponent } from './layout/header/header.component';
 import { AppFooterComponent } from './layout/footer/footer.component';
 
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+
+
+const routes: Routes = [
+  {
+    path: 'about',
+    component: AboutComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: ContactComponent
+  }];
 
 @NgModule({
   declarations: [
@@ -18,12 +37,15 @@ import { AppFooterComponent } from './layout/footer/footer.component';
     HelloWorldComponent,
     AppLayoutComponent,
     AppHeaderComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   exports: [],
   providers: [

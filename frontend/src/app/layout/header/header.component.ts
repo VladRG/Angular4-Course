@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { appLinks } from './links';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor() { }
+  links = [];
+  constructor() {
+    this.links = appLinks;
+  }
+
+
 
   ngOnInit() {
   }
