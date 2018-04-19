@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Credentials } from '@app/model';
+import { Credentials, RegisterCredentials } from '@app/model';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 
@@ -13,6 +13,14 @@ export class AuthService {
 
   login(credentials: Credentials): Observable<Credentials> {
     return this.httpClient.post<Credentials>('http://localhost:3000/login', credentials, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+
+  register(credentials: RegisterCredentials): Observable<RegisterCredentials> {
+    return this.httpClient.post<RegisterCredentials>('http://localhost:3000/register', credentials, {
       headers: {
         'Content-Type': 'application/json'
       }

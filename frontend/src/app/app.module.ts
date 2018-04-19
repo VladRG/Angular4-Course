@@ -20,6 +20,7 @@ import { UsersComponent } from '@app/users/users.component';
 import { UserService } from '@app/users/user.service';
 import { AuthGuard } from '@app/core';
 import { AppCoreModule } from '@app/core/core.module';
+import { AppRegisterComponent } from '@app/register/register.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: AppLoginComponent
+  },
+  {
+    path: 'register',
+    component: AppRegisterComponent
   },
   {
     path: 'user',
@@ -53,6 +58,7 @@ const routes: Routes = [
     AboutComponent,
     ContactComponent,
     AppLoginComponent,
+    AppRegisterComponent,
     UsersComponent
   ],
   imports: [
