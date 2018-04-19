@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '@app/users/user.service';
-import { User } from '@app/model';
+import { User, UserResponse } from '@app/model';
+import { MatTableDataSource, PageEvent } from '@angular/material';
 
 @Component({
   selector: 'app-users',
@@ -9,12 +10,24 @@ import { User } from '@app/model';
 })
 export class UsersComponent implements OnInit {
 
-  users: Array<User> = [];
-  constructor(private service: UserService) { }
+  dataSource: MatTableDataSource<User>;
+  total = 0;
+  constructor(private service: UserService) {
+    this.dataSource = new MatTableDataSource([]);
+  }
 
   ngOnInit() {
-    this.service.getUsers().subscribe((data: Array<User>) => {
-      this.users = data;
+    this.service.getUsers(0, 10).subscribe((data: UserResponse) => {
+      this.dataSource.data = data.users;
+      this.total = data.total;
+    }, console.error);
+  }
+
+  changePage(pageEvent: PageEvent) {
+    console.log(pageEvent);
+    this.service.getUsers(pageEvent.pageIndex, pageEvent.pageSize).subscribe((data: UserResponse) => {
+      this.dataSource.data = data.users;
+      this.total = data.total;
     }, console.error);
   }
 

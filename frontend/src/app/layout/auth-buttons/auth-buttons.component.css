@@ -1,3 +1,9 @@
 :host {
   margin-right: 24px;
+  display: flex;
+}
+
+.logged-in-user {
+  padding-right: 16px;
+  padding-top: 10px;
 }

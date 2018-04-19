@@ -18,8 +18,20 @@ app.get('/', function (req, res) {
 });
 
 app.get('/users', function (req, res) {
+
+    if (req.query.page) {
+        page = parseInt(req.query.page);
+    }
+
+    if (req.query.rows) {
+        rows = parseInt(req.query.rows);
+    }
+
     res.statusCode = 200;
-    res.send(users);
+    res.send({
+        users: users.slice(page * rows, rows),
+        total: users.length
+    });
 })
 
 app.post('/login', function (req, res) {

@@ -1,3 +1,6 @@
+<div *ngIf="isLoggedIn()" class="logged-in-user">
+  {{getUsername()}}
+</div>
 <ul class="navbar-nav mr-auto">
   <li class="nav-item app-link" *ngIf="!isLoggedIn()">
     <a class="nav-link" [routerLink]="['login']" routerLinkActive="link-active">
@@ -9,9 +12,7 @@
       Register
     </a>
   </li>
-  <li *ngIf="isLoggedIn()">
-    {{getUsername()}}
-  </li>
+
 
   <li class="nav-item app-link" *ngIf="isLoggedIn()">
     <a class="nav-link" href="javascript:void(0)" (click)="logout()">Logout</a>

@@ -4,7 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule, MatFormFieldModule, MatCardModule, MatInputModule } from '@angular/material';
+import {
+  MatButtonModule, MatFormFieldModule,
+  MatCardModule, MatInputModule, MatTableModule, MatIconModule, MatPaginatorModule
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
@@ -76,7 +79,9 @@ const routes: Routes = [
     MatButtonModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    MatTableModule,
+    MatIconModule,
+    MatPaginatorModule
   ],
   exports: [],
   providers: [

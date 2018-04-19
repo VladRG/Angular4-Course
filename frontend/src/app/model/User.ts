@@ -3,3 +3,8 @@ export class User {
   lastName: string;
   username: string;
 }
+
+export class UserResponse {
+  users: Array<User>;
+  total: number;
+}
