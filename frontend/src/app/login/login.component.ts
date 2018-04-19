@@ -3,6 +3,7 @@ import { Credentials } from '@app/model';
 import { AuthService } from '@app/auth.service';
 import { FormControl } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class AppLoginComponent implements OnInit {
   credentials: Credentials = new Credentials();
   error = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
 
   ngOnInit() { }
@@ -26,7 +27,8 @@ export class AppLoginComponent implements OnInit {
   loginButtonPressed() {
     this.authService.login(this.credentials)
       .subscribe((data: Credentials) => {
-        console.log(data);
+        this.authService.setUser(data);
+        this.router.navigateByUrl('/about');
       }, (response: HttpErrorResponse) => {
         this.error = response.error;
       });
