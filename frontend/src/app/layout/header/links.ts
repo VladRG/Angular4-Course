@@ -1,4 +1,4 @@
-export const appLinks: Array<any> = [
+export const appLinks: Array<AppRouterLink> = [
   {
     label: 'Contact',
     path: ['contact'],
@@ -17,5 +17,13 @@ export const appLinks: Array<any> = [
   }
 ];
 
+export class AppRouterLink {
+  label: string;
+  path: Array<string>;
+  activeClass: string;
+  options: {
+    exact: true
+  };
+}
 
 export const footerLinks: Array<any> = [];
