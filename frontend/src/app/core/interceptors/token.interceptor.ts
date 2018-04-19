@@ -1,9 +1,8 @@
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/observable';
 import { AuthService } from '@app/core';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/do';
-import { HttpResponse } from 'selenium-webdriver/http';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {

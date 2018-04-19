@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   login(credentials: Credentials): Observable<Credentials> {
-    return this.httpClient.post<Credentials>('http://localhost:3000/login', credentials, {
+    return this.httpClient.post<Credentials>('/login', credentials, {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -20,7 +20,7 @@ export class AuthService {
   }
 
   register(credentials: RegisterCredentials): Observable<RegisterCredentials> {
-    return this.httpClient.post<RegisterCredentials>('http://localhost:3000/register', credentials, {
+    return this.httpClient.post<RegisterCredentials>('/register', credentials, {
       headers: {
         'Content-Type': 'application/json'
       }
