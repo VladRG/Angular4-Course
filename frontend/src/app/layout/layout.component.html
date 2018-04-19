@@ -3,10 +3,13 @@
 
 </app-header>
 <!-- content -->
-<div class="container-fluid app-content">
+<div #content class="container-fluid app-content" (scroll)="onScroll($event)">
   <router-outlet></router-outlet>
 </div>
 
+<button (click)='scrollToTop()' class="back-to-top-button" mat-fab [@scrollButton]="canScrollToTop ? 'scrollable' : 'scrollLeft'">
+  Up
+</button>
 <app-footer>
 
 </app-footer>

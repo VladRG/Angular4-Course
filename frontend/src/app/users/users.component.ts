@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { UserService } from '@app/users/user.service';
 import { User, UserResponse } from '@app/model';
-import { MatTableDataSource, PageEvent } from '@angular/material';
+import { MatTableDataSource, PageEvent, MatSort, MatTable } from '@angular/material';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit, AfterViewInit {
+
+  @ViewChild(MatSort) sort: MatSort;
+
+  @ViewChild(MatTable) table: MatTable<User>;
 
   dataSource: MatTableDataSource<User>;
   total = 0;
@@ -29,6 +33,15 @@ export class UsersComponent implements OnInit {
       this.dataSource.data = data.users;
       this.total = data.total;
     }, console.error);
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+    console.log(this.table);
+  }
+
+  log(anything) {
+    console.log(anything);
   }
 
 }

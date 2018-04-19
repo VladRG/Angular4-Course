@@ -2,10 +2,12 @@
   <div class="col-xl-6 offset-xl-3">
     <mat-paginator [length]="total" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" (page)="changePage($event)">
     </mat-paginator>
-    <mat-table #table [dataSource]="dataSource">
+
+    <mat-table #table [dataSource]="dataSource" matSort>
+
 
       <ng-container matColumnDef="username">
-        <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+        <mat-header-cell mat-sort-header *matHeaderCellDef> Username </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
       </ng-container>
 
@@ -25,7 +27,7 @@
           <button type="button" mat-button aria-hidden="true" aria-label="Edit">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-button color="warn" type="button" aria-hidden="true" aria-label="Delete ">
+          <button (click)="log(table)" mat-button color="warn" type="button" aria-hidden="true" aria-label="Delete ">
             <mat-icon>delete</mat-icon>
           </button>
         </mat-cell>
