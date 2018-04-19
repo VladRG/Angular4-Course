@@ -1,7 +1,9 @@
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/observable';
 import { AuthService } from '@app/core';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/do';
+import { HttpResponse } from 'selenium-webdriver/http';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -16,6 +18,17 @@ export class TokenInterceptor implements HttpInterceptor {
       }
     });
 
-    return next.handle(req);
+    return next.handle(req).do((event: HttpEvent<any>) => {
+      if (event instanceof HttpResponse) {
+        // Intercepting incoming response
+      } else {
+        // Intercepting outgoing request
+      }
+    }, (err: any) => {
+      if (err instanceof HttpErrorResponse) {
+        // response error
+      }
+    });
   }
+
 }
