@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import {
   MatFormFieldModule, MatCardModule, MatInputModule, MatButtonModule, MatTableModule,
-  MatIconModule, MatPaginatorModule
+  MatIconModule, MatPaginatorModule, MatDialogModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalConfirmationComponent } from '@app/shared/components';
 
 @NgModule({
+  declarations: [
+    ModalConfirmationComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -22,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatTableModule,
     MatIconModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   exports: [
     CommonModule,
@@ -37,7 +42,11 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatTableModule,
     MatIconModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    ModalConfirmationComponent
   ]
 })
 export class AppSharedModule { }

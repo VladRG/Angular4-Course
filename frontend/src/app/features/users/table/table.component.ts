@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { MatSort, MatTable, MatTableDataSource, PageEvent } from '@angular/material';
+import { MatSort, MatTable, MatTableDataSource, PageEvent, MatDialog } from '@angular/material';
 import { User, UserResponse } from '@app/model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '@app/core';
+import { ModalConfirmationComponent } from '@app/shared/components';
 
 @Component({
   selector: 'app-table',
@@ -19,7 +20,8 @@ export class UserTableComponent implements OnInit, AfterViewInit {
   total = 0;
   constructor(private route: ActivatedRoute,
     private service: UserService,
-    private router: Router) {
+    private router: Router,
+    public dialog: MatDialog) {
     this.dataSource = new MatTableDataSource([]);
   }
 
@@ -39,12 +41,21 @@ export class UserTableComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+  delete(user: User) {
+    this.dialog.open(ModalConfirmationComponent, {
+      width: '300px',
+      height: '300px'
+    }).afterClosed().subscribe((data: boolean) => {
+      if (data) {
+        this.service.delete(user).subscribe(response => {
+          this.router.navigateByUrl('users');
+        }, console.error);
+      }
+    });
   }
 
-  log(anything) {
-    console.log(anything);
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 
   private updateUsers(data: UserResponse) {

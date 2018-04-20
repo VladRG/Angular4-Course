@@ -35,6 +35,42 @@ app.get('/users', function (req, res) {
 
 });
 
+app.post('/user', function (req, res) {
+    const user = users.filter(entity => entity.username === req.body.username)[0];
+    if (user) {
+        res.statusCode = 401;
+        res.send('User exists');
+    } else {
+        users.push(req.body);
+    }
+});
+
+app.put('/user/:username', function (req, res) {
+    const user = users.filter(entity => entity.username === req.body.username)[0];
+    if (!user) {
+        res.statusCode = 404;
+        res.send('User not found');
+    } else {
+        const index = users.indexOf(user);
+        users.splice(index, 1, req.body);
+        res.statusCode = 201;
+        res.send();
+    }
+});
+
+app.delete('/user/:username', function (req, res) {
+    const user = users.filter(entity => entity.username === req.body.username)[0];
+    if (!user) {
+        res.statusCode = 404;
+        res.send('User not found');
+    } else {
+        const index = users.indexOf(user);
+        users.splice(index, 1);
+        res.statusCode = 201;
+        res.send();
+    }
+})
+
 app.get('/user/:username', function (req, res) {
     const username = req.param('username');
     const user = users.filter(entity => entity.username === username)[0];

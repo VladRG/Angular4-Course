@@ -15,4 +15,16 @@ export class UserService {
   getUser(username: string): Observable<User> {
     return this.httpClient.get<User>(`/user/${username}`);
   }
+
+  addUser(user: User): Observable<any> {
+    return this.httpClient.post('/user', user);
+  }
+
+  saveUser(user: User): Observable<any> {
+    return this.httpClient.put(`/user/${user.username}`, user);
+  }
+
+  delete(user: User): Observable<any> {
+    return this.httpClient.delete(`/user/${user.username}`);
+  }
 }

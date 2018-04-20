@@ -27,5 +27,4 @@ export class UserFormComponent implements OnInit {
   submit() {
     this.submitted.emit(this.user);
   }
-
 }
