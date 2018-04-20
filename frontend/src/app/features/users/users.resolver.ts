@@ -13,6 +13,6 @@ export class UsersResolver implements Resolve<UserResponse> {
   resolve(route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<UserResponse> {
 
-    return this.service.getUsers(0, 10);
+    return this.service.getPaginated(0, 10);
   }
 }

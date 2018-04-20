@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
     res.send('hello');
 });
 
-app.get('/users', function (req, res) {
+app.get('/user', function (req, res) {
 
     if (req.query.page) {
         page = parseInt(req.query.page);

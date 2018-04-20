@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/observable';
-import { BaseEntity } from '@app/model';
+import { BaseEntity, ResponseBase } from '@app/model';
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class CrudService<T extends BaseEntity> {
+export class CrudService<T extends BaseEntity, TResponse extends ResponseBase<T>> {
   constructor(private http: HttpClient, url: string) {
     this.baseUrl = url;
   }
@@ -13,6 +13,10 @@ export class CrudService<T extends BaseEntity> {
 
   get(): Observable<Array<T>> {
     return this.http.get<Array<T>>(this.baseUrl);
+  }
+
+  getPaginated(page: number, rows: number): Observable<TResponse> {
+    return this.http.get<TResponse>(`${this.baseUrl}?page=${page}&rows=${rows}`);
   }
 
   find(entityId: number | string): Observable<T> {

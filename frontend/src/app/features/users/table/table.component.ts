@@ -36,7 +36,7 @@ export class UserTableComponent implements OnInit, AfterViewInit {
   }
 
   changePage(pageEvent: PageEvent) {
-    this.service.getUsers(pageEvent.pageIndex, pageEvent.pageSize).subscribe((data: any) => {
+    this.service.getPaginated(pageEvent.pageIndex, pageEvent.pageSize).subscribe((data: any) => {
       this.updateUsers(data.users as UserResponse);
     });
   }

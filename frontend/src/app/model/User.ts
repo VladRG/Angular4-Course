@@ -1,4 +1,4 @@
-import { BaseEntity } from './BaseEntity';
+import { BaseEntity, ResponseBase } from './BaseEntity';
 
 export class User extends BaseEntity {
   firstName: string;
@@ -7,7 +7,7 @@ export class User extends BaseEntity {
   password: string;
 }
 
-export class UserResponse {
+export class UserResponse extends ResponseBase<User> {
   users: Array<User>;
   total: number;
 }

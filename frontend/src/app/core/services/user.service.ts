@@ -5,29 +5,29 @@ import { UserResponse, User } from '@app/model';
 import { CrudService } from '@app/core/services/crud.service';
 
 @Injectable()
-export class UserService extends CrudService<User> {
+export class UserService extends CrudService<User, UserResponse> {
 
   constructor(private httpClient: HttpClient) {
     super(httpClient, '/user');
   }
 
-  getUsers(page: number, rows: number): Observable<UserResponse> {
-    return this.httpClient.get<UserResponse>(`/users?page=${page}&rows=${rows}`);
-  }
+  // getUsers(page: number, rows: number): Observable<UserResponse> {
+  //   return this.httpClient.get<UserResponse>(`/users?page=${page}&rows=${rows}`);
+  // }
 
-  getUser(username: string): Observable<User> {
-    return this.httpClient.get<User>(`/user/${username}`);
-  }
+  // getUser(username: string): Observable<User> {
+  //   return this.httpClient.get<User>(`/user/${username}`);
+  // }
 
-  addUser(user: User): Observable<any> {
-    return this.httpClient.post('/user', user);
-  }
+  // addUser(user: User): Observable<any> {
+  //   return this.httpClient.post('/user', user);
+  // }
 
-  saveUser(user: User): Observable<any> {
-    return this.httpClient.put(`/user/${user.username}`, user);
-  }
+  // saveUser(user: User): Observable<any> {
+  //   return this.httpClient.put(`/user/${user.username}`, user);
+  // }
 
-  delete(user: User): Observable<any> {
-    return this.httpClient.delete(`/user/${user.username}`);
-  }
+  // delete(user: User): Observable<any> {
+  //   return this.httpClient.delete(`/user/${user.username}`);
+  // }
 }
