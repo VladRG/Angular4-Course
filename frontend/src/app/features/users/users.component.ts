@@ -31,7 +31,7 @@ export class UsersComponent implements OnInit, AfterViewInit {
   }
 
   edit(user: User) {
-    this.router.navigateByUrl(`user/${user.username}/${user.firstName}`);
+    this.router.navigateByUrl(`user/${user.username}`);
   }
 
   changePage(pageEvent: PageEvent) {

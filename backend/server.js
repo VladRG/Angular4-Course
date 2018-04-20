@@ -19,24 +19,33 @@ app.get('/', function (req, res) {
 
 app.get('/users', function (req, res) {
 
-    setTimeout(() => {
-        if (req.query.page) {
-            page = parseInt(req.query.page);
-        }
+    if (req.query.page) {
+        page = parseInt(req.query.page);
+    }
 
-        if (req.query.rows) {
-            rows = parseInt(req.query.rows);
-        }
+    if (req.query.rows) {
+        rows = parseInt(req.query.rows);
+    }
 
-        res.statusCode = 200;
-        res.send({
-            users: users.slice(page * rows, rows),
-            total: users.length
-        });
-    }, 3000);
+    res.statusCode = 200;
+    res.send({
+        users: users.slice(page * rows, rows),
+        total: users.length
+    });
 
+});
 
-})
+app.get('/user/:username', function (req, res) {
+    const username = req.param('username');
+    const user = users.filter(entity => entity.username === username)[0];
+    if (user) {
+        res.send(user);
+    } else {
+        res.statusCode = 404;
+        res.send('User not found');
+    }
+
+});
 
 app.post('/login', function (req, res) {
     const existingUser = users.filter((user) => user.username === req.body.username)[0];

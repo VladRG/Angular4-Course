@@ -1,0 +1,43 @@
+<form #myForm="ngForm" (submit)="submit()">
+
+  <mat-form-field>
+    <input required minlength="4" matInput placeholder="Username" name="username" #username='ngModel' [(ngModel)]='user.username'>
+
+    <mat-error *ngIf='username.control.errors && username.control.errors.required'>
+      Required
+    </mat-error>
+    <mat-error *ngIf='username.control.errors && username.control.errors.minlength'>
+      Required min length is {{username.control.errors.minlength.requiredLength}}.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="password" required minlength="4" matInput placeholder="Password" name="password" #password='ngModel' [(ngModel)]='user.password'>
+
+    <mat-error *ngIf='password.control.errors && password.control.errors.required'>
+      Required
+    </mat-error>
+    <mat-error *ngIf='password.control.errors && password.control.errors.minlength'>
+      Required min length is {{password.control.errors.minlength.requiredLength}}.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="text" required matInput placeholder="First Name" name="firstName" #firstName='ngModel' [(ngModel)]='user.firstName'>
+
+    <mat-error *ngIf='firstName.control.errors && firstName.control.errors.required'>
+      Required
+    </mat-error>
+
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input type="text" required matInput placeholder="Last Name" name="lastName" #lastName='ngModel' [(ngModel)]='user.lastName'>
+
+    <mat-error *ngIf='lastName.control.errors && lastName.control.errors.required'>
+      Required
+    </mat-error>
+  </mat-form-field>
+  <button mat-button [disabled]="myForm.form.invalid" (click)="submit()">Save</button>
+</form>

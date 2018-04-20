@@ -1,3 +1,14 @@
-<p>
-  edit works!
-</p>
+<div class="col-xl-6 offset-xl-3">
+  <mat-card>
+    <mat-card-title>Edit user</mat-card-title>
+    <mat-card-content>
+
+      <ng-container *ngIf="user">
+        <app-user-form [user]='user' (submitted)='saveUser($event)'>
+
+        </app-user-form>
+      </ng-container>
+
+    </mat-card-content>
+  </mat-card>
+</div>

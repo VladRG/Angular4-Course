@@ -4,11 +4,13 @@ import { UserRoutingModule } from './routing.module';
 import { UsersComponent } from './users.component';
 import { UsersResolver } from './users.resolver';
 import { EditUserComponent } from '@app/features/users/edit/edit.component';
+import { UserFormComponent } from '@app/features/users/form/form.component';
 
 @NgModule({
   declarations: [
     UsersComponent,
-    EditUserComponent
+    EditUserComponent,
+    UserFormComponent
   ],
   providers: [
     UsersResolver
