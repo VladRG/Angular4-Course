@@ -9,10 +9,13 @@ import { CrudService } from '@app/core/services/crud.service';
 
 @NgModule({
   providers: [
+    // Services
     AuthService,
     UserService,
     CrudService,
     AuthGuard,
+
+    // Interceptors
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
@@ -23,9 +26,17 @@ import { CrudService } from '@app/core/services/crud.service';
       useClass: ApiUrlInterceptor,
       multi: true
     }
+
+    // Directives
   ],
   imports: [
+
   ],
-  declarations: []
+  exports: [
+
+  ],
+  declarations: [
+
+  ]
 })
 export class AppCoreModule { }

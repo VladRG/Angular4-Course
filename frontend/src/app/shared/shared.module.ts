@@ -8,10 +8,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalConfirmationComponent } from '@app/shared/components';
+import { CapitalizePipe } from './pipes';
 
 @NgModule({
   declarations: [
-    ModalConfirmationComponent
+    ModalConfirmationComponent,
+
+    // Pipes
+    CapitalizePipe
   ],
   imports: [
     CommonModule,
@@ -43,7 +47,10 @@ import { ModalConfirmationComponent } from '@app/shared/components';
     MatTableModule,
     MatIconModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+
+    // Pipes
+    CapitalizePipe
   ],
   entryComponents: [
     ModalConfirmationComponent

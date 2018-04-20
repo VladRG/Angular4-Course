@@ -11,7 +11,7 @@
 
   <ng-container matColumnDef="firstName">
     <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{element.firstName | capitalize}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="lastName">

@@ -1,98 +1,98 @@
 module.exports = [{
         username: 'test',
         password: 'test',
-        firstName: 'Test1',
-        lastName: 'Testovici1'
+        firstName: 'test1',
+        lastName: 'testovici1'
     },
     {
         username: 'test2',
         password: 'test2',
-        firstName: 'Test2',
-        lastName: 'Testovici2'
+        firstName: 'test2',
+        lastName: 'testovici2'
     },
     {
         username: 'test3',
         password: 'test3',
-        firstName: 'Test3',
-        lastName: 'Testovici3'
+        firstName: 'test3',
+        lastName: 'testovici3'
     }, {
         username: 'test4',
         password: 'test4',
-        firstName: 'Test4',
-        lastName: 'Testovici4'
+        firstName: 'test4',
+        lastName: 'testovici4'
     }, {
         username: 'test5',
         password: 'test5',
-        firstName: 'Test5',
-        lastName: 'Testovici5'
+        firstName: 'test5',
+        lastName: 'testovici5'
     }, {
         username: 'test6',
         password: 'test6',
-        firstName: 'Test6',
-        lastName: 'Testovici6'
+        firstName: 'test6',
+        lastName: 'testovici6'
     }, {
         username: 'test7',
         password: 'test',
-        firstName: 'Test7',
-        lastName: 'Testovici7'
+        firstName: 'test7',
+        lastName: 'testovici7'
     }, {
         username: 'test8',
         password: 'test',
-        firstName: 'Test8',
-        lastName: 'Testovici8'
+        firstName: 'test8',
+        lastName: 'testovici8'
     }, {
         username: 'test9',
         password: 'test',
-        firstName: 'Test9',
-        lastName: 'Testovici9'
+        firstName: 'test9',
+        lastName: 'testovici9'
     },
     {
         username: 'test10',
         password: 'test',
-        firstName: 'Test10',
-        lastName: 'Testovici10'
+        firstName: 'test10',
+        lastName: 'testovici10'
     },
     {
         username: 'test11',
         password: 'test',
-        firstName: 'Test11',
-        lastName: 'Testovici11'
+        firstName: 'test11',
+        lastName: 'testovici11'
     }, {
         username: 'test5',
         password: 'test5',
-        firstName: 'Test5',
-        lastName: 'Testovici5'
+        firstName: 'test5',
+        lastName: 'testovici5'
     }, {
         username: 'test6',
         password: 'test6',
-        firstName: 'Test6',
-        lastName: 'Testovici6'
+        firstName: 'test6',
+        lastName: 'testovici6'
     }, {
         username: 'test7',
         password: 'test',
-        firstName: 'Test7',
-        lastName: 'Testovici7'
+        firstName: 'test7',
+        lastName: 'testovici7'
     }, {
         username: 'test8',
         password: 'test',
-        firstName: 'Test8',
-        lastName: 'Testovici8'
+        firstName: 'test8',
+        lastName: 'testovici8'
     }, {
         username: 'test9',
         password: 'test',
-        firstName: 'Test9',
-        lastName: 'Testovici9'
+        firstName: 'test9',
+        lastName: 'testovici9'
     },
     {
         username: 'test10',
         password: 'test',
-        firstName: 'Test10',
-        lastName: 'Testovici10'
+        firstName: 'test10',
+        lastName: 'testovici10'
     },
     {
         username: 'test11',
         password: 'test',
-        firstName: 'Test11',
-        lastName: 'Testovici11'
+        firstName: 'test11',
+        lastName: 'testovici11'
     }
 ];
