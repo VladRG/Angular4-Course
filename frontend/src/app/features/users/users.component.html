@@ -1,5 +1,5 @@
 <div class="row flex-it col-xl-6 offset-xl-3">
-  <mat-card>
+  <mat-card [ngClass]="{'background-blue': isBlue, 'background-white': !isBlue}">
     Users Feature
   </mat-card>
   <br/>
