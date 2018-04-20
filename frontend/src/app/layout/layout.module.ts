@@ -6,7 +6,7 @@ import { AppHeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { AppFooterComponent } from './footer/footer.component';
 import { AppLayoutComponent } from './layout.component';
-import { AppAuthButtonsComponent } from './auth-buttons/auth-buttons.component';
+import { AppAuthButtonsComponent } from './header/auth-buttons/auth-buttons.component';
 
 
 @NgModule({
