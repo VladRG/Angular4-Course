@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input, ViewChild } from '@angular/core';
 import { User } from '@app/model';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormGroup, FormBuilder, Form, AbstractFormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'app-user-form',
@@ -19,6 +19,8 @@ export class UserFormComponent implements OnInit {
 
 
   ngOnInit() {
+
+
     if (!this.user) {
       this.user = new User();
     }

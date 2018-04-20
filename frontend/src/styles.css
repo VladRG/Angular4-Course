@@ -22,3 +22,7 @@ body {
 .mat-form-field {
   width: 100%;
 }
+
+.background-blue {
+  background-color: cadetblue;
+}

@@ -5,17 +5,21 @@ import {
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalConfirmationComponent } from '@app/shared/components';
 import { CapitalizePipe } from './pipes';
+import { HighlightDirective } from '@app/shared/highlight.directive';
 
 @NgModule({
   declarations: [
     ModalConfirmationComponent,
 
     // Pipes
-    CapitalizePipe
+    CapitalizePipe,
+
+    // Directives
+    HighlightDirective
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,8 @@ import { CapitalizePipe } from './pipes';
     MatTableModule,
     MatIconModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   exports: [
     CommonModule,
@@ -48,9 +53,13 @@ import { CapitalizePipe } from './pipes';
     MatIconModule,
     MatPaginatorModule,
     MatDialogModule,
+    ReactiveFormsModule,
 
     // Pipes
-    CapitalizePipe
+    CapitalizePipe,
+
+    // Directives
+    HighlightDirective
   ],
   entryComponents: [
     ModalConfirmationComponent

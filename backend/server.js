@@ -19,6 +19,8 @@ app.get('/', function (req, res) {
 
 app.get('/user', function (req, res) {
 
+    let page = 0;
+    let rows = 0;
     if (req.query.page) {
         page = parseInt(req.query.page);
     }
@@ -27,9 +29,14 @@ app.get('/user', function (req, res) {
         rows = parseInt(req.query.rows);
     }
 
+    const expectedEndIndex = page * rows + rows;
+    const index = expectedEndIndex < users.length ? expectedEndIndex : users.length
+    paginatedUsers = users.slice(page * rows, );
+
+
     res.statusCode = 200;
     res.send({
-        users: users.slice(page * rows, rows),
+        users: paginatedUsers,
         total: users.length
     });
 
@@ -85,7 +92,7 @@ app.get('/user/:username', function (req, res) {
 
 app.post('/login', function (req, res) {
     const existingUser = users.filter((user) => user.username === req.body.username)[0];
-    if (existingUser.password === req.body.password) {
+    if (existingUser && existingUser.password === req.body.password) {
         res.statusCode = 200;
         res.setHeader('Authorization', JSON.stringify(req.body));
         res.send(req.body)

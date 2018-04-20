@@ -2,7 +2,6 @@
 
   <mat-form-field>
     <input required minlength="4" matInput placeholder="Username" name="username" #username='ngModel' [(ngModel)]='user.username'>
-
     <mat-error *ngIf='username.control.errors && username.control.errors.required'>
       Required
     </mat-error>
@@ -30,7 +29,6 @@
     </mat-error>
 
   </mat-form-field>
-
 
   <mat-form-field>
     <input type="text" required matInput placeholder="Last Name" name="lastName" #lastName='ngModel' [(ngModel)]='user.lastName'>
