@@ -5,11 +5,13 @@ import { AuthGuard } from './guards';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor, ApiUrlInterceptor } from './interceptors';
 import { UserService } from './services';
+import { CrudService } from '@app/core/services/crud.service';
 
 @NgModule({
   providers: [
     AuthService,
     UserService,
+    CrudService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
