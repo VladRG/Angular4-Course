@@ -1,0 +1,36 @@
+<mat-paginator [length]="total" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" (page)="changePage($event)">
+</mat-paginator>
+
+<mat-table #table [dataSource]="dataSource" matSort>
+
+
+  <ng-container matColumnDef="username">
+    <mat-header-cell mat-sort-header *matHeaderCellDef> Username </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="firstName">
+    <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef class="text-center"> Actions </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button (click)='edit(element)' type="button" mat-button aria-hidden="true" aria-label="Edit">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button (click)="log(table)" mat-button color="warn" type="button" aria-hidden="true" aria-label="Delete ">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['username', 'firstName', 'lastName', 'actions']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['username', 'firstName', 'lastName', 'actions'];"></mat-row>
+</mat-table>

@@ -4,6 +4,7 @@ import { AuthGuard } from '@app/core';
 import { UsersComponent } from './users.component';
 import { EditUserComponent } from './edit/edit.component';
 import { UsersResolver } from './users.resolver';
+import { UserTableComponent } from './table/table.component';
 
 const routes: Routes = [
   {
@@ -15,11 +16,17 @@ const routes: Routes = [
     },
     data: {
       pageName: 'Users'
-    }
-  },
-  {
-    path: 'user/:id',
-    component: EditUserComponent
+    },
+    children: [
+      {
+        path: '',
+        component: UserTableComponent
+      },
+      {
+        path: ':id',
+        component: EditUserComponent
+      }
+    ]
   }
 ];
 

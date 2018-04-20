@@ -3,14 +3,16 @@ import { AppSharedModule } from '@app/shared';
 import { UserRoutingModule } from './routing.module';
 import { UsersComponent } from './users.component';
 import { UsersResolver } from './users.resolver';
-import { EditUserComponent } from '@app/features/users/edit/edit.component';
-import { UserFormComponent } from '@app/features/users/form/form.component';
+import { EditUserComponent } from './edit/edit.component';
+import { UserFormComponent } from './form/form.component';
+import { UserTableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
     UsersComponent,
     EditUserComponent,
-    UserFormComponent
+    UserFormComponent,
+    UserTableComponent
   ],
   providers: [
     UsersResolver
