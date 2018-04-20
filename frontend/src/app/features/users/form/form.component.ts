@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ViewChild } from '@angular/core';
 import { User } from '@app/model';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-form',
@@ -15,6 +16,7 @@ export class UserFormComponent implements OnInit {
 
   @Output()
   submitted: EventEmitter<User> = new EventEmitter();
+
 
   ngOnInit() {
     if (!this.user) {

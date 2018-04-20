@@ -5,6 +5,7 @@ import { UsersComponent } from './users.component';
 import { EditUserComponent } from './edit/edit.component';
 import { UsersResolver } from './users.resolver';
 import { UserTableComponent } from './table/table.component';
+import { NewUserComponent } from './new/new.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: '',
         component: UserTableComponent
+      },
+      {
+        path: 'create',
+        component: NewUserComponent
       },
       {
         path: ':id',

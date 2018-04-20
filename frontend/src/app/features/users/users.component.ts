@@ -12,7 +12,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
+
+  create() {
+    this.router.navigateByUrl('user/create');
+  }
 }

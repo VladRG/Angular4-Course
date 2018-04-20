@@ -6,13 +6,15 @@ import { UsersResolver } from './users.resolver';
 import { EditUserComponent } from './edit/edit.component';
 import { UserFormComponent } from './form/form.component';
 import { UserTableComponent } from './table/table.component';
+import { NewUserComponent } from './new/new.component';
 
 @NgModule({
   declarations: [
     UsersComponent,
     EditUserComponent,
     UserFormComponent,
-    UserTableComponent
+    UserTableComponent,
+    NewUserComponent
   ],
   providers: [
     UsersResolver

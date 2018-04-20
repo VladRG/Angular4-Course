@@ -1,4 +1,4 @@
-<form #myForm="ngForm" (submit)="submit()">
+<form #myForm="ngForm">
 
   <mat-form-field>
     <input required minlength="4" matInput placeholder="Username" name="username" #username='ngModel' [(ngModel)]='user.username'>
