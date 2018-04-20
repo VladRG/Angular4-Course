@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CrudService<T extends BaseEntity, TResponse extends ResponseBase<T>> {
-  constructor(private http: HttpClient, url: string) {
+  constructor(private http: HttpClient, private url: string) {
     this.baseUrl = url;
   }
 
