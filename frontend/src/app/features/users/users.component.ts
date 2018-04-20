@@ -3,7 +3,7 @@ import { UserService } from '@app/core';
 import { User, UserResponse } from '@app/model';
 import { MatTableDataSource, PageEvent, MatSort, MatTable } from '@angular/material';
 import { Route } from '@angular/compiler/src/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -18,7 +18,9 @@ export class UsersComponent implements OnInit, AfterViewInit {
 
   dataSource: MatTableDataSource<User>;
   total = 0;
-  constructor(private route: ActivatedRoute, private service: UserService) {
+  constructor(private route: ActivatedRoute,
+    private service: UserService,
+    private router: Router) {
     this.dataSource = new MatTableDataSource([]);
   }
 
@@ -28,8 +30,11 @@ export class UsersComponent implements OnInit, AfterViewInit {
     });
   }
 
+  edit(user: User) {
+    this.router.navigateByUrl(`user/${user.username}/${user.firstName}`);
+  }
+
   changePage(pageEvent: PageEvent) {
-    console.log(pageEvent);
     this.service.getUsers(pageEvent.pageIndex, pageEvent.pageSize).subscribe((data: any) => {
       this.updateUsers(data.users as UserResponse);
     });
@@ -37,7 +42,6 @@ export class UsersComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
-    console.log(this.table);
   }
 
   log(anything) {

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '@app/core';
 import { UsersComponent } from './users.component';
+import { EditUserComponent } from './edit/edit.component';
 import { UsersResolver } from './users.resolver';
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
     data: {
       pageName: 'Users'
     }
+  },
+  {
+    path: 'user/:id/:firstName',
+    component: EditUserComponent
   }
 ];
 
